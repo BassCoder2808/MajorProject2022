@@ -17,7 +17,7 @@ if __name__ == '__main__':
     # get the (domain-specific) python AST of the example Python code snippet
     py_ast = ast.parse(py_code)
 
-    # convert the python AST into general-purpose ASDL AST used by tranX
+    # convert the python AST into general-purpose ASDL AST used by SimpliFy
     asdl_ast = python_ast_to_asdl_ast(py_ast.body[0], grammar)
     print('String representation of the ASDL AST: \n%s' % asdl_ast.to_string())
     print('Size of the AST: %d' % asdl_ast.size)

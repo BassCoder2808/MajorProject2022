@@ -1,4 +1,4 @@
-name: tranX
+name: SimpliFy
 channels:
   - pytorch
   - anaconda
@@ -9,6 +9,6 @@ dependencies:
   - python=3.7.3
   - pytorch=1.1.0
   - pip:
-    - six
-    - xgboost
-    - tqdm
+      - six
+      - xgboost
+      - tqdm

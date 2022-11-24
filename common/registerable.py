@@ -1,7 +1,6 @@
 class Registrable(object):
     """
     A class that collects all registered components,
-    adapted from `common.registrable.Registrable` from AllenNLP
     """
     registered_components = dict()
 

@@ -1,19 +1,19 @@
 ## ASDL Transition System
 
-This package contains a standalone transition system based on the ASDL formalism, 
+This package contains a standalone transition system based on the ASDL formalism,
 and its instantiations in different languages (lambda calculus, prolog, Python, SQL).
 A transition system defines the set of tree-constructing actions to generate an ASDL AST.
-This package can be used as a standalone component independent of `tranX`.
+This package can be used as a standalone component independent of `SimpliFy`.
 
 ### File Structure
 
-* `asdl.py` contains classes that implement basic concepts in ASDL (grammar, constructor, production, field, type, etc.)
-* `asdl_ast.py` contains the `AbstractSyntaxTree` class that define an abstract syntax tree
-* `transition_system.py` contains the abstract class of a transition system,
-instantiated by the transition systems in each language folder. 
-A transition system defines the set of tree-constructing actions used to generate an AST. 
-* `hypothesis.py` contains the `Hypothesis` class, which records the state of a partially generated AST constructed
-by a series of actions. 
+- `asdl.py` contains classes that implement basic concepts in ASDL (grammar, constructor, production, field, type, etc.)
+- `asdl_ast.py` contains the `AbstractSyntaxTree` class that define an abstract syntax tree
+- `transition_system.py` contains the abstract class of a transition system,
+  instantiated by the transition systems in each language folder.
+  A transition system defines the set of tree-constructing actions used to generate an AST.
+- `hypothesis.py` contains the `Hypothesis` class, which records the state of a partially generated AST constructed
+  by a series of actions.
 
 ### Example
 
@@ -39,7 +39,7 @@ py_code = """pandas.read('file.csv', nrows=100)"""
 # get the (domain-specific) python AST of the example Python code snippet
 py_ast = ast.parse(py_code)
 
-# convert the python AST into general-purpose ASDL AST used by tranX
+# convert the python AST into general-purpose ASDL AST used by SimpliFy
 asdl_ast = python_ast_to_asdl_ast(py_ast.body[0], grammar)
 print('String representation of the ASDL AST: \n%s' % asdl_ast.to_string())
 print('Size of the AST: %d' % asdl_ast.size)

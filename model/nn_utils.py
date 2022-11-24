@@ -192,7 +192,7 @@ class LabelSmoothing(nn.Module):
 
 
 class FeedForward(nn.Module):
-    """Feed forward neural network adapted from AllenNLP"""
+    """Feed forward neural network"""
 
     def __init__(self, input_dim, num_layers, hidden_dims, activations, dropout):
         super(FeedForward, self).__init__()

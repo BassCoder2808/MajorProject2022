@@ -18,7 +18,7 @@ if six.PY3:
 
 class StandaloneParser(object):
     """
-    a tranX parser that could parse raw input issued by end user, it is a
+    Parser that could parse raw input issued by end user, it is a
     bundle of a `Parser` and an `ExampleProcessor`. It is useful for demo
     purposes
     """
