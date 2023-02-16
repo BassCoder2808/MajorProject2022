@@ -1,6 +1,6 @@
-# Codify
+# Simplify
 
-Codify stands for a smart intelligent system that can code like a human being for a data science application. It enables data scientists to perform all the tedious and time-consuming tasks such as EDA (exploratory data analysis), data cleaning, data pre-processing, data visualization, modeling, and evaluation in the data-science life cycle, by only conveying the logic of the task in natural language (English query) and the system will automatically give out all the relevant python code snippets, or in other words the user just needs to type what they want in the form of a natural language query (English), and our system will automatically give out all the relevant code snippets in python for it.
+Simplify stands for a smart intelligent system that can code like a human being for a data science application. It enables data scientists to perform all the tedious and time-consuming tasks such as EDA (exploratory data analysis), data cleaning, data pre-processing, data visualization, modeling, and evaluation in the data-science life cycle, by only conveying the logic of the task in natural language (English query) and the system will automatically give out all the relevant python code snippets, or in other words the user just needs to type what they want in the form of a natural language query (English), and our system will automatically give out all the relevant code snippets in python for it.
 
 <br>
 <img src ="Codify-Demo-GIF.gif">
