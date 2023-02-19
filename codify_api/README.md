@@ -1,4 +1,4 @@
-# Codify API
+# Simplify API
 
 ## Get Started
 
