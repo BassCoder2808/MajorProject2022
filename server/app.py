@@ -10,10 +10,13 @@ import json
 
 import six
 from flask import Flask, jsonify, render_template, request
+from flask_cors import CORS, cross_origin
 
 from components.standalone_parser import StandaloneParser
 
 app = Flask(__name__)
+cors = CORS(app)
+app.config['CORS_HEADERS'] = 'Content-Type'
 parsers = dict()
 
 def init_arg_parser():
@@ -33,8 +36,9 @@ def default():
     return render_template('default.html')
 
 
-@app.route('/parse/<dataset>', methods=['GET'])
+@app.route('/parse/<dataset>', methods=['GET', 'POST'])
 def parse(dataset):
+    print(request.args['q'])
     utterance = request.args['q']
 
     parser = parsers[dataset]
