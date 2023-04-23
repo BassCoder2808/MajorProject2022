@@ -1,0 +1,150 @@
+{
+  "name": "code-cognition",
+  "displayName": "MahaDev GPT",
+  "description": "An AI-Driven Code Wrangler (use chatGPT internally)",
+  "version": "0.0.13",
+  "keywords": [
+    "Chat GPT",
+    "Code cognition"
+  ],
+  "icon": "images/logo.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aadeshkulkarni/code-cognition"
+  },
+  "engines": {
+    "vscode": "^1.65.0"
+  },
+  "publisher": "VedantJolly",
+  "categories": [
+    "Data Science",
+    "Machine Learning",
+    "Programming Languages",
+    "Snippets",
+    "Testing",
+    "Linters",
+    "Education",
+    "Other"
+  ],
+  "main": "./extension.js",
+  "activationEvents": [
+    "code-cognition.genCode",
+    "code-cognition.analyseCode",
+    "code-cognition.docString",
+    "code-cognition.optimise",
+    "code-cognition.refactor"
+  ],
+  "contributes": {
+    "commands": [
+      {
+        "command": "code-cognition.genCode",
+        "title": "MahaDev GPT | Generate code"
+      },
+      {
+        "command": "code-cognition.docString",
+        "title": "MahaDev GPT | Generate doc-string"
+      },
+      {
+        "command": "code-cognition.analyseCode",
+        "title": "MahaDev GPT | Explain code"
+      },
+      {
+        "command": "code-cognition.optimise",
+        "title": "MahaDev GPT | Optimise code"
+      },
+      {
+        "command": "code-cognition.refactor",
+        "title": "MahaDev GPT | Refactor code"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "code-cognition.genCode",
+        "key": "cmd+shift+g"
+      },
+      {
+        "command": "code-cognition.genCode",
+        "key": "ctrl+shift+g"
+      },
+      {
+        "command": "code-cognition.analyseCode",
+        "title": "MahaDev GPT | Explain",
+        "key": "cmd+shift+a"
+      },
+      {
+        "command": "code-cognition.analyseCode",
+        "title": "MahaDev GPT | Explain",
+        "key": "ctrl+shift+a"
+      },
+      {
+        "command": "code-cognition.docString",
+        "title": "MahaDev GPT | Generate doc-string",
+        "key": "cmd+shift+d"
+      },
+      {
+        "command": "code-cognition.docString",
+        "title": "MahaDev GPT | Generate doc-string",
+        "key": "ctrl+shift+d"
+      },
+      {
+        "command": "code-cognition.optimise",
+        "title": "MahaDev GPT | Optimise code",
+        "key": "cmd+shift+o"
+      },
+      {
+        "command": "code-cognition.refactor",
+        "title": "MahaDev GPT | Refactor code",
+        "key": "cmd+shift+r"
+      }
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "command": "code-cognition.genCode",
+          "title": "MahaDev GPT | Generate code"
+        },
+        {
+          "command": "code-cognition.analyseCode",
+          "title": "MahaDev GPT | Explain code"
+        },
+        {
+          "command": "code-cognition.docString",
+          "title": "MahaDev GPT | Generate doc-string"
+        },
+        {
+          "command": "code-cognition.optimise",
+          "title": "MahaDev GPT | Optimise code"
+        },
+        {
+          "command": "code-cognition.refactor",
+          "title": "MahaDev GPT | Refactor code"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "npm run lint",
+    "test": "node ./test/runTest.js",
+    "vscode:prepublish": "npm run esbuild-base -- --minify",
+    "esbuild-base": "esbuild ./extension.js --bundle --outfile=out/main.js --external:vscode --platform=node",
+    "esbuild": "npm run esbuild-base -- --sourcemap",
+    "esbuild-watch": "npm run esbuild-base -- --sourcemap --watch",
+    "test-compile": "tsc -p ./"
+  },
+  "devDependencies": {
+    "@types/glob": "^8.1.0",
+    "@types/mocha": "^10.0.1",
+    "@types/node": "16.x",
+    "@types/vscode": "^1.65.0",
+    "@vscode/test-electron": "^2.2.3",
+    "esbuild": "^0.17.10",
+    "eslint": "^8.34.0",
+    "glob": "^8.1.0",
+    "mocha": "^10.2.0",
+    "typescript": "^4.9.5"
+  },
+  "dependencies": {
+    "openai": "^3.1.0"
+  }
+}
